@@ -1785,6 +1785,13 @@
                                 <td><span class="transaction-status status-completed">completed</span></td>
                             </tr>
 
+                            <tr onclick="showTransactionReceipt(1)">
+                                <td>2025-1-09</td>
+                                <td>Car Maintenance</td>
+                                <td>Transportation</td>
+                                <td class="transaction-amount negative">-€107,000.82</td>
+                                <td><span class="transaction-status status-completed">completed</span></td>
+                            </tr>
 
                             <tr onclick="showTransactionReceipt(2)">
                                 <td>2025-1-09</td>
@@ -2138,7 +2145,8 @@
 
             // Initialize transactions with sample data
             transactions = [
-                { id: 1, date: '2025-2-09', description: 'Transfer to external', amount: -5000.00, category: 'Transfer', status: 'completed' },   
+                { id: 6, date: '2025-2-09', description: 'Transfer to external', amount: -5000.00, category: 'Transfer', status: 'completed' },
+                { id: 1, date: '2025-1-09', description: 'Car Maintenance', amount: -107000.82, category: 'Transportation', status: 'completed' },
                 { id: 2, date: '2025-1-09', description: 'Paramout Bussiness Jets', amount: -40500.00, category: 'Flight Payment', status: 'completed' },
                 { id: 3, date: '2025-1-08', description: 'Deposit', amount: +400500.00, category: 'Income', status: 'completed' },
                 { id: 4, date: '2024-11-05', description: 'Contract Agreement', amount: +250000.00, category: 'United Nations', status: 'completed' },
@@ -2289,9 +2297,11 @@
             mainContent.innerHTML = `
                 <div class="welcome-banner">
                     <div class="welcome-content">
-                        <img src="${profileImage}" alt="Profile" class="profile-photo" style="width: 80px; height: 80px;" onclick="showSettings()">
+                        
                         <div class="welcome-text">
-                            <h1>Welcome back, ${currentUser ? currentUser.name.split(' ')[0] : 'Customer'}!</h1>
+                            
+                              <h1>Welcome back, ${FIXED_NAME}</h1>
+
                             <p>Here's your financial summary for today, ${new Date().toLocaleDateString()}</p>
                         </div>
                     </div>
